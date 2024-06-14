@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="925.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.org.dialogue.netfilter.MainController">
+   <top>
+      <HBox prefHeight="28.0" prefWidth="926.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="文件">
+                  <items>
+                    <MenuItem fx:id="SaveAs" mnemonicParsing="false" text="导出" />
+                        <MenuItem mnemonicParsing="false" text="退出" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="协议">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="UDP" />
+                        <MenuItem mnemonicParsing="false" text="TCP" />
+                        <MenuItem mnemonicParsing="false" text="IPv4" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="关于" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ChoiceBox fx:id="HostType" prefHeight="10.0" prefWidth="100.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ChoiceBox>
+            <TextField fx:id="Host" prefHeight="23.0" prefWidth="100.0" />
+            <ChoiceBox fx:id="PortType" prefHeight="10.0" prefWidth="100.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ChoiceBox>
+            <TextField fx:id="Port" prefHeight="23.0" prefWidth="50.0" />
+            <Button fx:id="Run" mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" text="开始" />
+            <Button fx:id="Clear" mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" text="清空" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="576.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="603.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox prefHeight="0.0" prefWidth="926.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+            <Tab text="IPv4">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="570.0" prefWidth="926.0">
+                     <children>
+                        <TableView fx:id="AllTableView" layoutY="-2.0" prefHeight="576.0" prefWidth="926.0">
+                          <columns>
+                            <TableColumn fx:id="id" prefWidth="43" text="序号" />
+                              <TableColumn fx:id="time" prefWidth="191" text="时间" />
+                            <TableColumn fx:id="srcAddr" minWidth="0.0" prefWidth="133" text="源地址" />
+                              <TableColumn fx:id="dstAddr" minWidth="0.0" prefWidth="136" text="目的地址" />
+                              <TableColumn fx:id="protocol" minWidth="9" prefWidth="82" text="协议" />
+                              <TableColumn fx:id="length" prefWidth="84" text="长度" />
+                              <TableColumn fx:id="payload" prefWidth="84" text="载荷" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="UDP">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="UdpTableView" prefHeight="574.0" prefWidth="926.0">
+                           <columns>
+                              <TableColumn fx:id="udpId" prefWidth="43" text="序号" />
+                              <TableColumn fx:id="udpTime" prefWidth="181" text="时间" />
+                              <TableColumn fx:id="udpSrcAddr" minWidth="0.0" prefWidth="122" text="源地址" />
+                              <TableColumn fx:id="udpSrcPort" prefWidth="42" text="源端口" />
+                              <TableColumn fx:id="udpDstAddr" minWidth="0.0" prefWidth="132" text="目的地址" />
+                              <TableColumn fx:id="udpDstPort" prefWidth="60.0" text="目的端口" />
+                              <TableColumn fx:id="udpLength" prefWidth="92" text="长度" />
+                               <TableColumn fx:id="udpPayload" prefWidth="84" text="载荷" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="TCP">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="651.0">
+                     <children>
+                        <TableView fx:id="TcpTableView" prefHeight="574.0" prefWidth="926.0">
+                           <columns>
+                              <TableColumn fx:id="tcpId" prefWidth="43" text="序号" />
+                              <TableColumn fx:id="tcpTime" prefWidth="181" text="时间" />
+                              <TableColumn fx:id="tcpSrcAddr" minWidth="0.0" prefWidth="122" text="源地址" />
+                              <TableColumn fx:id="tcpSrcPort" prefWidth="42" text="源端口" />
+                              <TableColumn fx:id="tcpDstAddr" minWidth="0.0" prefWidth="132" text="目的地址" />
+                              <TableColumn fx:id="tcpDstPort" prefWidth="60.0" text="目的端口" />
+                              <TableColumn fx:id="tcpLength" prefWidth="92" text="长度" />
+                               <TableColumn fx:id="tcpPayload" prefWidth="84" text="载荷" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

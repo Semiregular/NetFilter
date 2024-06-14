@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="NetFilter">
+    <output-path>$PROJECT_DIR$/out/artifacts/NetFilter</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="cn.org.dialogue.netfilter.MainApplication" />
+        <option name="description" value="" />
+        <option name="height" value="600" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="网络包分析测试" />
+        <option name="vendor" value="周正明" />
+        <option name="version" value="1.0.0" />
+        <option name="width" value="1000" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="NetFilter.jar">
+        <element id="module-output" name="NetFilter" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
