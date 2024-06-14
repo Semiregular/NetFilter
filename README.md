@@ -1,5 +1,8 @@
-<<<<<<< HEAD
+
 # 网络抓包程序说明
+
+![](https://img.shields.io/github/commit-activity/m/Semiregular/NetFilter?color=6cf) ![](https://img.shields.io/github/repo-size/Semiregular/NetFilter?color=red) ![](https://img.shields.io/github/issues-closed/Semiregular/NetFilter?color=green) ![](https://img.shields.io/github/issues-pr-closed/Semiregular/NetFilter?color=gold)  ![](https://img.shields.io/github/stars/Semiregular/NetFilter?style=flat) 
+
 
 ## 项目架构
 
